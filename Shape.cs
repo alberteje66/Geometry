@@ -14,6 +14,10 @@ namespace Geometry
 
         private double _dimensionZ;
 
+        public Shape(double dimensionX)
+        {
+            _dimensionX = dimensionX;
+        }
         public Shape(double dimensionX, double dimensionY, double dimensionZ)
         {
              _dimensionX = dimensionX;
