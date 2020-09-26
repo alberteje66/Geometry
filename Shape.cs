@@ -12,6 +12,15 @@ namespace Geometry
         private double _dimensionX;
         private double _dimensionY;
 
+        private double _dimensionZ;
+
+        public Shape(double dimensionX, double dimensionY, double dimensionZ)
+        {
+             _dimensionX = dimensionX;
+            _dimensionY = dimensionY;
+            _dimensionZ = dimensionZ;
+        }
+
         public Shape (double dimensionX, double dimensionY) {
             _dimensionX = dimensionX;
             _dimensionY = dimensionY;
