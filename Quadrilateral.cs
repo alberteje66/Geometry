@@ -5,7 +5,7 @@ namespace Geometry {
         private bool IsSquare; //differentiates between square and rectangles
         private double _dimensionX;
         private double _dimensionY;
-        private bool RightAngle;
+        private bool RightAngle; //only squares and rectangles have right angles
 
         public RightAngleQuads (double dimensionX, double dimensionY) : base (dimensionX, dimensionY) {
             _dimensionX = dimensionX;
