@@ -35,7 +35,7 @@ namespace Geometry
 
         protected virtual double GetArea () {
             //basic method for getting the area of a shape
-            Area = _dimensionX * _dimensionY;
+            Area = _dimensionX * _dimensionY*_dimensionZ;
             return Area;
         }
     }
