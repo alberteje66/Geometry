@@ -7,7 +7,7 @@ namespace Geometry
         double _a, _b, _c;
         public TriSides _sides;
 
-         PythagoreanTheorem(double a, double b, double c)
+         public PythagoreanTheorem(double a, double b, double c)
         {
             _a =a;
             _b = b;
