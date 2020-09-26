@@ -3,6 +3,7 @@ namespace Geometry
     class Triangle : IShape
     {
         private double _a, _b, _c;
+        private PythagoreanTheorem _pythag;
         private TriSides Sides;
         private Shape _triangle; //in this triangle HAS a shape, not it is a shape
         
