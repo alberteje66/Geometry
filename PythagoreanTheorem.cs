@@ -22,6 +22,16 @@ namespace Geometry
             return _c;
         }
 
+        public double BLength() {
+            _b = Math.Sqrt((Math.Pow(_c, 2)-Math.Pow(_a, 2)));
+            return _b;
+        }
+
+        public double ALength() {
+            _a = Math.Sqrt((Math.Pow(_c, 2)-Math.Pow(_b, 2)));
+             return _a;
+        }
+
 
     }
 }
