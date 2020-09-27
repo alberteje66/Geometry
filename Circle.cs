@@ -18,5 +18,10 @@ namespace Geometry
             _radius = radius;
             _shape = shape;
         }
+
+        public double GetArea() {
+            Area = _pi * Math.Pow(_radius, 2);
+            return Area;
+        }
     }
 }
