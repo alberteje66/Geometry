@@ -1,5 +1,7 @@
 namespace Geometry
 {
+    public delegate double Area(double a);
+    public delegate double Perimeter (double a);
     public class Shape : IShape {
         /*
         * base class for Shapes. Will use some polymorhism to set things about 
