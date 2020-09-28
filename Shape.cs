@@ -1,6 +1,8 @@
 namespace Geometry
 {
-    class Shape : IShape {
+    public delegate double Area(double a);
+    public delegate double Perimeter (double a);
+    public class Shape : IShape {
         /*
         * base class for Shapes. Will use some polymorhism to set things about 
         */
@@ -14,6 +16,10 @@ namespace Geometry
 
         private double _dimensionZ;
 
+        public Shape(double dimensionX)
+        {
+            _dimensionX = dimensionX;
+        }
         public Shape(double dimensionX, double dimensionY, double dimensionZ)
         {
              _dimensionX = dimensionX;
@@ -35,7 +41,7 @@ namespace Geometry
 
         protected virtual double GetArea () {
             //basic method for getting the area of a shape
-            Area = _dimensionX * _dimensionY;
+            Area = _dimensionX * _dimensionY*_dimensionZ;
             return Area;
         }
     }
