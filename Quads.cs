@@ -5,6 +5,7 @@ namespace Geometry {
         private bool IsSquare; //differentiates between square and rectangles
         private double _dimensionX;
         private double _dimensionY;
+        private Shape _quads;
 
         private PythagoreanTheorem pythagorean;
 
@@ -13,6 +14,7 @@ namespace Geometry {
             _dimensionY = dimensionY;
             _dimensionX = dimensionX;
             pythagorean = new PythagoreanTheorem(0, _dimensionX, _dimensionY);
+            _quads = new Shape(_dimensionX, _dimensionY);
         }
 
         private bool RightAngle; //only squares and rectangles have right angles

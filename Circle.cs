@@ -16,6 +16,7 @@ namespace Geometry
 
         public double GetArea() {
            return _pi * Math.Pow(_radius, 2);
+           //simpler versions of the methods, as circles are pretty straightforward
         }
 
         public double GetPerimeter() {
