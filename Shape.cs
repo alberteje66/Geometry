@@ -1,8 +1,8 @@
 namespace Geometry
 {
-    public class Shape : IShape {
-        /*
-        * base class for Shapes. Will use some polymorhism to set things about 
+   public class Shape : IShape {
+    
+        /* base class for Shapes. Will use some polymorhism to set things about 
         */
 
         //dimensions for a shape 
