@@ -4,12 +4,7 @@ namespace Geometry
 {
     public class Circle : IShape
     {
-        public double Area { get; set; }
-        public double Perimeter { get; set; }
-        public bool Is2D { get; set; } = true;
         private Shape _shape;
-        
-
         private double _radius;
         private const double _pi = Math.PI;
 
@@ -20,8 +15,12 @@ namespace Geometry
         }
 
         public double GetArea() {
-            Area = _pi * Math.Pow(_radius, 2);
-            return Area;
+           return _pi * Math.Pow(_radius, 2);
+           //simpler versions of the methods, as circles are pretty straightforward
+        }
+
+        public double GetPerimeter() {
+            return _pi * (_radius*2);
         }
     }
 }

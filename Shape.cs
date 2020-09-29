@@ -1,14 +1,9 @@
 namespace Geometry
 {
-    public delegate double Area(double a);
-    public delegate double Perimeter (double a);
-    public class Shape : IShape {
-        /*
-        * base class for Shapes. Will use some polymorhism to set things about 
+   public class Shape : IShape {
+    
+        /* base class for Shapes. Will use some polymorhism to set things about 
         */
-        public double Area { get; set; }
-        public double Perimeter { get; set; }
-        public bool Is2D { get; set; } = true;
 
         //dimensions for a shape 
         private double _dimensionX;
@@ -32,17 +27,15 @@ namespace Geometry
             _dimensionY = dimensionY;
         }
 
-        protected virtual double GetPerimeter ()
+        public double GetPerimeter ()
         {
                 //basics for getting a perimeter
-                Perimeter = _dimensionX + _dimensionY;
-                return Perimeter;
+                return _dimensionX + _dimensionY;
         }
 
-        protected virtual double GetArea () {
+        public  double GetArea () {
             //basic method for getting the area of a shape
-            Area = _dimensionX * _dimensionY*_dimensionZ;
-            return Area;
+            return _dimensionX * _dimensionY*_dimensionZ;
         }
     }
 }

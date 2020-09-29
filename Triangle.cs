@@ -6,8 +6,8 @@ namespace Geometry
         private PythagoreanTheorem _pythag;
         private TriSides Sides;
         private Shape _triangle; //in this triangle HAS a shape, not it is a shape
-        public double Area { get; set; }
-        public double Perimeter{get; set;}
+        public double area;
+         public double perimeter;
         
         public bool Is2D { get; set; }= true;
         public Triangle(double a, double b, double c)
@@ -26,13 +26,13 @@ namespace Geometry
             //area of a triangle is base x height divided by two
             double height = _pythag.ALength();
             double _base = _b;
-           Area = ((_base*height)/2);
-           return Area;
+           area = ((_base*height)/2);
+           return area;
         }
 
         public double GetPerimeter() {
-            Perimeter = _a+_b+_c;
-            return Perimeter;
+            perimeter = _a+_b+_c;
+            return perimeter;
         }
        
     }
