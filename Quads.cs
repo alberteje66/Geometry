@@ -3,50 +3,54 @@
 namespace Geometry {
     class Quads : IShape {
         private bool IsSquare; //differentiates between square and rectangles
-        private double _dimensionX;
-        private double _dimensionY;
+        private double _width;        
+        private double _length;
+        private double _height;
+        private bool _rightAngles;
         private Shape _quads;
-
         private PythagoreanTheorem pythagorean;
 
-        public Quads(double dimensionY, double dimensionX)
+        public Quads(double length, double width)
         {
-            _dimensionY = dimensionY;
-            _dimensionX = dimensionX;
-            pythagorean = new PythagoreanTheorem(0, _dimensionX, _dimensionY);
-            _quads = new Shape(_dimensionX, _dimensionY);
+            _length = length;
+            _width = width;
+            pythagorean = new PythagoreanTheorem(_height, _length, _width);
+            _quads = new Shape(_height, _length, _width);
         }
 
         private bool RightAngle; //only squares and rectangles have right angles
 
         public double GetPerimeter () {
            double perimeter = 1;
-            if (IsSquare) {
-               perimeter = _dimensionX * 4; 
-            }
-             else if (!IsSquare) {
-                perimeter = (2*_dimensionX) + (2*_dimensionY);
-            }
+           if (!IsSquare)
+           {
+               perimeter = (2 * _length) + (2 * _width);
+           }
+           else
+           {
+               perimeter = _width * 4;
+           }
 
-            return perimeter;
+           return perimeter;
         }
 
         public double GetArea () {
             double area = 1;
             if (IsSquare) {
-                area = Math.Pow (_dimensionX, 2);
+                area = Math.Pow (_width, 2);
             } else if (!IsSquare) {
-                if (RightAngle) {
-                    area = (_dimensionX) + (_dimensionY);
+                if (RightAngle)
+                {
+                    area = _length * _width;
                 }
-                area = _dimensionX * _dimensionY;
             } else {
                 //takes into account parallelograms
                 double height = pythagorean.ALength();
-                area = _dimensionX * height;
+                area = _width * _height;
             }
 
             return area;
         }
     }
+
 }
