@@ -1,25 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/home/starz102/Desktop/CSharp_Programs/Geometry/Geometry.csproj": {}
+    "D:\\OneDrive\\Projects\\C Sharp Programs\\Github Repositories\\alberteje66\\Geometry\\Geometry.csproj": {}
   },
   "projects": {
-    "/home/starz102/Desktop/CSharp_Programs/Geometry/Geometry.csproj": {
+    "D:\\OneDrive\\Projects\\C Sharp Programs\\Github Repositories\\alberteje66\\Geometry\\Geometry.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/starz102/Desktop/CSharp_Programs/Geometry/Geometry.csproj",
+        "projectUniqueName": "D:\\OneDrive\\Projects\\C Sharp Programs\\Github Repositories\\alberteje66\\Geometry\\Geometry.csproj",
         "projectName": "Geometry",
-        "projectPath": "/home/starz102/Desktop/CSharp_Programs/Geometry/Geometry.csproj",
-        "packagesPath": "/home/starz102/.nuget/packages/",
-        "outputPath": "/home/starz102/Desktop/CSharp_Programs/Geometry/obj/",
+        "projectPath": "D:\\OneDrive\\Projects\\C Sharp Programs\\Github Repositories\\alberteje66\\Geometry\\Geometry.csproj",
+        "packagesPath": "C:\\Users\\vades\\.nuget\\packages\\",
+        "outputPath": "D:\\OneDrive\\Projects\\C Sharp Programs\\Github Repositories\\alberteje66\\Geometry\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/home/starz102/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\vades\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -50,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.402/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
