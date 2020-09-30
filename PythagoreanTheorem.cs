@@ -7,6 +7,11 @@ namespace Geometry
         double _a, _b, _c;
         // public TriSides _sides;
 
+        public PythagoreanTheorem()
+        {
+            
+        }
+
          public PythagoreanTheorem(double a, double b, double c)
         {
             _a =a;
@@ -18,19 +23,18 @@ namespace Geometry
             don't need these anymore, changed the RightTriangle part*/
         }
 
-        public double CLength() {
-            _c = Math.Sqrt((Math.Pow(_a, 2)+ Math.Pow(_b, 2)));
-            return _c;
+        public double CLength(double a, double b)
+        {
+            return Math.Sqrt((Math.Pow(a, 2)) + (Math.Pow(b, 2)));
         }
 
-        public double BLength() {
-            _b = Math.Sqrt((Math.Pow(_c, 2)-Math.Pow(_a, 2)));
-            return _b;
+        public double BLength(double a, double c) {
+            return Math.Sqrt((Math.Pow(a, 2)-Math.Pow(c, 2)));
         }
 
-        public double ALength() {
-            _a = Math.Sqrt((Math.Pow(_c, 2)-Math.Pow(_b, 2)));
-             return _a;
+        public double ALength(double b, double c)
+        {
+            return Math.Sqrt((Math.Pow(c, 2) - Math.Pow(b, 2)));
         }
 
 

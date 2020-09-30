@@ -6,5 +6,7 @@
         public double Line2 { get; set; }
         public double Line3 { get; set; }
         public double Line4 { get; set; }
+
+        public bool RightAngles { get; set; }   
     }
 }
