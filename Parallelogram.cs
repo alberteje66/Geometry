@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq.Expressions;
 
 namespace Geometry
 {
@@ -9,6 +10,8 @@ namespace Geometry
         public double Line3 { get; set; }
         public double Line4 { get; set; }
         public bool RightAngles { get; set; } = false;
+
+        private Plane _shape;
        // public delegate double GetHeight(double b, double c);
 
 
@@ -22,6 +25,7 @@ namespace Geometry
             Line2 = line2;
             Line3 = line1;
             Line4 = line2;
+            _shape = new Plane(Line1, Line2);
         }
 
         public double GetArea(double height, double baseLine1)

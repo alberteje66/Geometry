@@ -1,6 +1,6 @@
 namespace Geometry
 {
-   public class Shape : IShape {
+   public class Plane : IPlane {
     
         /* base class for Shapes. Will use some polymorhism to set things about 
         */
@@ -11,18 +11,18 @@ namespace Geometry
 
         private double _dimensionZ;
 
-        public Shape(double dimensionX)
+        public Plane(double dimensionX)
         {
             _dimensionX = dimensionX;
         }
-        public Shape(double dimensionX, double dimensionY, double dimensionZ)
+        public Plane(double dimensionX, double dimensionY, double dimensionZ, double @base)
         {
              _dimensionX = dimensionX;
             _dimensionY = dimensionY;
             _dimensionZ = dimensionZ;
         }
 
-        public Shape (double dimensionX, double dimensionY) {
+        public Plane (double dimensionX, double dimensionY) {
             _dimensionX = dimensionX;
             _dimensionY = dimensionY;
         }
@@ -37,5 +37,7 @@ namespace Geometry
             //basic method for getting the area of a shape
             return _dimensionX * _dimensionY*_dimensionZ;
         }
-    }
+
+        public bool Is2D { get; set; } = true;
+   }
 }
