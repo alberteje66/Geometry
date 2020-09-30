@@ -1,12 +1,16 @@
+using System;
+using System.Reflection.Metadata.Ecma335;
+
 namespace Geometry
 {
-    class Triangle : IPlane
+    class Triangle
     {
         private double A, B, C;
         private PythagoreanTheorem _pythag;
         //private TriSides Sides;
-        private Plane _triangle; //in this triangle HAS a shape, not it is a shape
         private TriangleType _type;
+        private Area _area;
+        private Perimeter _perimeter;
 
         public bool Is2D { get; set; }= true;
 
@@ -17,15 +21,18 @@ namespace Geometry
             C = c;
         }
 
-        public double GetArea() {
+        public void GetArea() {
             //area of a triangle is base x height divided by two
             double height = _pythag.ALength(B, C);
-           return (B*height)/2;
+            _area = () => ((height*B)/2);
+            Console.WriteLine(_area);
         }
 
 
-        public double GetPerimeter() {
-            return A+B+C;
+        public void GetPerimeter()
+        {
+            _perimeter = () => A + B + C;
+            Console.WriteLine(_perimeter);
         }
 
         public void GetType()
@@ -37,6 +44,8 @@ namespace Geometry
             {
                 _type = TriangleType.Isosoles;
             }
+
+            Console.WriteLine($"Triangle is {_type}");
         }
 
     }

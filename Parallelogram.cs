@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq.Expressions;
+using System.Numerics;
 
 namespace Geometry
 {
@@ -10,14 +11,11 @@ namespace Geometry
         public double Line3 { get; set; }
         public double Line4 { get; set; }
         public bool RightAngles { get; set; } = false;
-
-        private Plane _shape;
-       // public delegate double GetHeight(double b, double c);
+        private PythagoreanTheorem _pythagorean;
 
 
-        //private double _height;
-
-        //private PythagoreanTheorem _pythagorean = new PythagoreanTheorem(double a, double b, double c);
+        private Area _area;
+        private Perimeter _perimeter;
 
         public Parallelogram(double line1, double line2)
         {
@@ -25,20 +23,20 @@ namespace Geometry
             Line2 = line2;
             Line3 = line1;
             Line4 = line2;
-            _shape = new Plane(Line1, Line2);
         }
 
-        public double GetArea(double height, double baseLine1)
+        protected virtual void GetArea(double height, double _base)
         {
-            var pythag = new PythagoreanTheorem();
-            height = pythag.ALength(Line1, Line2);
-            baseLine1 = Line1;
-            return height * baseLine1;
+            height = _pythagorean.ALength(Line2, Line1);
+            _base = Line2;
+            _area = () => _base * height;
+            Console.WriteLine(_area);
         }
 
-        public double GetPerimeter(double line1, double line2)
+        protected virtual void GetPerimeter(double line1, double line2)
         {
-            return (2 * line1) + (2 * line2);
+            _perimeter = () => (2 * Line1) + (2 * Line2);
+            Console.WriteLine(_perimeter);
         }
     }
 }
