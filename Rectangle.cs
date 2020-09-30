@@ -1,27 +1,35 @@
-﻿namespace Geometry
-{
-    public class Rectangle : IQuadrilaterals
-    {
-        public double Line1 { get; set; }
-        public double Line2 { get; set; }
-        public double Line3 { get; set; }
-        public double Line4 { get; set; }
-        public bool RightAngles { get; set; } = true;
+﻿using System;
 
-        public Rectangle(double length, double width)
+namespace Geometry
+{
+    public class Rectangle : Parallelogram
+    {
+        public double Length { get; set; }
+        public double Width { get; set; }
+
+        private bool _rightangle;
+        private Area _area;
+        private Perimeter _perimeter;
+
+        public Rectangle(double length, double width) : base(length, width)
         {
+            Length = length;
+            Width = width;
             Line1 = length;
             Line2 = width;
+            _rightangle = true;
         }
 
-        public double GetPerimeter(double length, double width)
+        protected void GetPerimeter()
         {
-            return (2 * length) + (2 * width);
+            base.GetPerimeter(Length, Width);
         }
 
-        public double GetArea(double length, double width)
+        protected void GetArea()
         {
-            return length * width;
+            _area = () => Length * Width;
+            Console.WriteLine(_area);
+
         }
 
     }

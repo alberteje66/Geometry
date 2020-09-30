@@ -2,27 +2,28 @@ using System;
 
 namespace Geometry
 {
-    public class Circle : IPlane
+    public class Circle
     {
-        private Plane _shape;
         private double _radius;
         private const double _pi = Math.PI;
+        private Area _area;
+        private Perimeter _perimeter;
 
-        public Circle(double radius, Plane shape)
+        public Circle(double radius)
         {
             _radius = radius;
-            _shape = shape;
+
+            //simpler versions of the methods, as circles are pretty straightforward
         }
 
-        public double GetArea() {
-           return _pi * Math.Pow(_radius, 2);
-           //simpler versions of the methods, as circles are pretty straightforward
+        public void CProperties()
+        {
+            _perimeter = () => (2 * _radius) * _pi;
+            _area = () => Math.Pow(_radius, 2) * _pi;
+            Console.WriteLine(_perimeter);
+            Console.WriteLine(_area);
+
         }
 
-        public bool Is2D { get; set; } = true;
-
-        public double GetPerimeter() {
-            return _pi * (_radius*2);
-        }
     }
-}
+    }
