@@ -11,4 +11,9 @@ namespace Geometry
 
     //public delegate double Perimeter(double x, double y, double z);
 
+    public delegate double SurfaceArea();
+    //Surface area and Volume are for solids
+    
+    public delegate double Volume();
+
 }
