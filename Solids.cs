@@ -9,6 +9,6 @@ namespace Geometry
         public double Height { get; set; }
         public double Width { get; set; }
         public double Depth { get; set; }
-        public bool Is3D { get; set; }
+        
     }
 }

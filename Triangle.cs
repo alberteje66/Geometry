@@ -8,7 +8,6 @@ namespace Geometry
         private double A, B, C;
         private PythagoreanTheorem _pythag;
         //private TriSides Sides;
-        private TriangleType _type;
         private Area _area;
         private Perimeter _perimeter;
 
