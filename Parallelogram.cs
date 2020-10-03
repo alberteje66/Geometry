@@ -25,18 +25,15 @@ namespace Geometry
             Line4 = line2;
         }
 
-        protected virtual void GetArea(double height, double _base)
-        {
-            height = _pythagorean.ALength(Line2, Line1);
-            _base = Line2;
-            _area = () => _base * height;
-            Console.WriteLine(_area);
+        public void QuadProperties(){ 
+            System.Console.WriteLine("A parallelogram has two sets of parallel sides, and both are equal./r/n Rectangles and Squares are TYPES of Parallelograms.");
         }
 
-        protected virtual void GetPerimeter(double line1, double line2)
-        {
-            _perimeter = () => (2 * Line1) + (2 * Line2);
-            Console.WriteLine(_perimeter);
+        public virtual void QuadProperties (double height, double _base) {
+            _base = Line2;
+            height = _pythagorean.ALength(_base, Line2);
+            _area = () => _base * height;
+            _perimeter = ()=> (2*Line1) + (2*_base);
         }
     }
 }

@@ -20,16 +20,17 @@ namespace Geometry
             _rightangle = true;
         }
 
-        protected void GetPerimeter()
-        {
-            base.GetPerimeter(Length, Width);
+        public void QuadProperties() {
+            base.QuadProperties();
         }
 
-        protected void GetArea()
+        public override void QuadProperties(double length, double width)
         {
-            _area = () => Length * Width;
-            Console.WriteLine(_area);
+            length = Line1;
+            width = Line2;
 
+            _area = () => length*width;
+            _perimeter = () => (2*length) + (2*width);
         }
 
     }

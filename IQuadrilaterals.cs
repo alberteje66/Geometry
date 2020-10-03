@@ -2,11 +2,13 @@
 {
     public interface IQuadrilaterals
     {
-        public double Line1 { get; set; }
-        public double Line2 { get; set; }
-        public double Line3 { get; set; }
-        public double Line4 { get; set; }
+        public double A { get; set; }
+        public double B { get; set; }
+        public double C { get; set; }
+        public double D { get; set; }
 
-        public bool RightAngles { get; set; }   
+        public void QuadProperties();
+
+
     }
 }

@@ -1,38 +1,32 @@
 ﻿using System;
 using System.Security.Cryptography.X509Certificates;
+using static System.Console;
 
 namespace Geometry {
-    class Square : IQuadrilaterals {
+    class Square : Parallelogram {
+        private Perimeter _perimeter;
+        private Area _area;
         public Square(double squareLine)
         {
             Line1 = squareLine;
-            Line2 = squareLine;
-            Line3 = squareLine;
-            Line4 = squareLine;
         }
 
-        public double Line1 { get; set; }
-        public double Line2 { get; set; }
-        public double Line3 { get; set; } 
-        public double Line4 { get; set; }
+          public void QuadProperties() {
+            base.QuadProperties();
+        }
         public bool RightAngles { get; set; } = true;
 
-        public double GetPerimeter(double squareline)
-        {
-            return 4 * squareline;
+        public void QuadProperties (double x){
+            x = Line1;
+            _perimeter= () => x*4;
+            _area = () => x*x;
+            
         }
 
-        public double GetArea(double squareline)
-        {
-            return squareline*squareline;
-            //area of a square
+        public void QuadProperties() {
+            base.QuadProperties();
+            Console.WriteLine("A square is a regular lateral with 4 equal sides that meet at right angles.");
         }
-
-        public double GetPerimeter(double line1, double line2)
-        {
-            return (2 * line1) + (2 * line2);
-        }
-
 
     }
 

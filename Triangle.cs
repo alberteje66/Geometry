@@ -21,31 +21,32 @@ namespace Geometry
             C = c;
         }
 
-        public void GetArea() {
-            //area of a triangle is base x height divided by two
-            double height = _pythag.ALength(B, C);
-            _area = () => ((height*B)/2);
-            Console.WriteLine(_area);
+
+        public void TriagProperties()
+        {
+            System.Console.WriteLine("A triangle is a plane of 3 sides meeting at 3 angles.");
         }
 
+        public void TriagProperties(double a, double b, double c) {
+            A= a;
+            B = b;
+            C = c;
 
-        public void GetPerimeter()
-        {
-            _perimeter = () => A + B + C;
-            Console.WriteLine(_perimeter);
+            double height = _pythag.ALength(b, c);
+
+            _area = () => (height*B)/2;
+            _perimeter = () => A+B+C;
+            System.Console.WriteLine(_perimeter);
+            System.Console.WriteLine(_area);
         }
 
-        public void GetType()
-        {
-            if ((A + B + C) % 3 == 0)
-            {
-                _type = TriangleType.Equilateral;
-            } else if (((A + B) % 2 == 0) || ((B + C) % 2 == 0) || ((A + C) % 2 == 0))
-            {
-                _type = TriangleType.Isosoles;
-            }
+        public void TriagProperties(double a, double b){
+            //for right triangles
+            A = a;
+            B = b;
 
-            Console.WriteLine($"Triangle is {_type}");
+            _area = () => (a*b)/2;
+            _perimeter = () => A+B+C;
         }
 
     }
