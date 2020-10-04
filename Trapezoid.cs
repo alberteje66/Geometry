@@ -5,37 +5,35 @@ namespace Geometry
 {
     public class Trapezoid : IQuadrilaterals
     {
-        public double Line1 { get; set; }
-        public double Line2 { get; set; }
-        public double Line3 { get; set; }
-        public double Line4 { get; set; }
-        public bool RightAngles { get; set; } = false;
+        public double A { get; set; }
+        public double B { get; set; }
+        public double C { get; set; }
+        public double D { get; set; }
+        //public bool RightAngles { get; set; } = false;
         private PythagoreanTheorem _pythagorean;
         private Perimeter _perimeter;
         private Area _area;
 
-        public Trapezoid(double a, double b, double c, double B)
+        public Trapezoid(double a, double b, double c, double d)
         {
-            Line1 = a;
-            Line2 = b;
-            Line3 = c;
-            Line4 = B;
+            A = a;
+            B = b;
+            C = c;
+            D = B;
         }
 
         public void QuadProperties() {
             double height;
-            height = _pythagorean.ALength(Line4, Line3);
+            height = _pythagorean.ALength(D, C);
             System.Console.WriteLine("A trapezoid is a quadrilateral where one pair of sides are parallel.");
             System.Console.WriteLine($"Trapezoid's Height = {height}");
         }
 
-        public void QuadProperties (double b, double B) {
-            b = Line2;
-            B = Line4;
-            double height = _pythagorean.ALength(B, Line3);
+        public void QuadProperties () {
+            double height = _pythagorean.ALength(D, C);
 
-            _perimeter = () => Line1+b+Line3+B;
-            _area = () => ((Line1+b)/2)*height;
+            _perimeter = () => A+B+C+D;
+            _area = () => ((B+D)/2)*height;
 
         }
     }

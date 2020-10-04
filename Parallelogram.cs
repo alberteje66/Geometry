@@ -6,23 +6,23 @@ namespace Geometry
 {
     public class Parallelogram : IQuadrilaterals
     {
-        public double Line1 { get; set; }
-        public double Line2 { get; set; }
-        public double Line3 { get; set; }
-        public double Line4 { get; set; }
-        public bool RightAngles { get; set; } = false;
+        public double A { get; set; }
+        public double B { get; set; }
+        public double C { get; set; }
+        public double D { get; set; }
+        
         private PythagoreanTheorem _pythagorean;
 
 
         private Area _area;
         private Perimeter _perimeter;
 
-        public Parallelogram(double line1, double line2)
+        public Parallelogram(double a, double b)
         {
-            Line1 = line1;
-            Line2 = line2;
-            Line3 = line1;
-            Line4 = line2;
+           A = a;
+           B = b;
+           C = A;
+           D = B;
         }
 
         public void QuadProperties(){ 
@@ -30,8 +30,8 @@ namespace Geometry
         }
 
         public virtual void QuadProperties (double height, double _base) {
-            _base = Line2;
-            height = _pythagorean.ALength(_base, Line2);
+            _base = B;
+            height = _pythagorean.ALength(_base, A);
             _area = () => _base * height;
             _perimeter = ()=> (2*Line1) + (2*_base);
         }
